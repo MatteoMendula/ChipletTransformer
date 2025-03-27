@@ -48,16 +48,23 @@ Since DeiT is a Vision Transformer (ViT)-based model, it primarily consists of:
 3. MLP layers (GEMM)
 
 Breakdown of Layers:
-1. Patch Embedding (Conv2D)
-Projects input images (3x224x224) into 768-dimensional tokens using a 16x16 Conv2D.
-This is directly supported as a CONV2D layer in MAESTRO.
-2. Self-Attention (GEMM)
-Implements matrix multiplication (GEMM) for self-attention.
-Uses the standard (M, K) x (K, N) → (M, N) format.
-3. MLP Layers (GEMM)
-The first GEMM expands hidden states from 768 → 3072.
-The second GEMM projects them back from 3072 → 768.
-4. Classification Head (GEMM)
-Final Linear (FC) layer mapping 768 → 1000 (ImageNet classes).
+1. **Patch Embedding (Conv2D)**
+    
+    Projects input images (3x224x224) into 768-dimensional tokens using a 16x16 Conv2D.
+    This is directly supported as a CONV2D layer in MAESTRO.
+
+2. **Self-Attention (GEMM)**
+
+    Implements matrix multiplication (GEMM) for self-attention.
+    Uses the standard (M, K) x (K, N) → (M, N) format.
+    
+3. **MLP Layers (GEMM)**
+
+    The first GEMM expands hidden states from 768 → 3072.
+    The second GEMM projects them back from 3072 → 768.
+
+4. **Classification Head (GEMM)**
+
+    Final Linear (FC) layer mapping 768 → 1000 (ImageNet classes).
 
 
