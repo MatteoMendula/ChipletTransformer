@@ -1,0 +1,7 @@
+Model Layer	Mapped Layer (Type)	Notes
+Patch Embedding	Conv2d-1	(3→768) kernel 16, stride 16
+Self-Attn Q/K/V	Conv2d-2 → Conv2d-4	(768→768) 1x1 CONV
+Attn Output	Conv2d-5	Linear after softmax (768→768)
+MLP 1 (expand)	Conv2d-6	(768→3072)
+MLP 2 (project)	Conv2d-7	(3072→768)
+Classifier	e.g. Conv2d-76+	(768→1000), ×2 heads
