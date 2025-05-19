@@ -1,0 +1,4 @@
+aux_head_1 (after layer 6): 55.4% mIoU
+aux_head_2 (after layer 12): 63.1% mIoU
+aux_head_3 (after layer 18): 74.6% mIoU
+Main decode_head (final output): 77.97% mIoU
